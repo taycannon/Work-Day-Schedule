@@ -1,0 +1,75 @@
+/* body {
+    font-family: cursive;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+#current-date {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.time-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #fff;
+}
+
+.time {
+    font-weight: bold;
+    width: 80px;
+}
+
+.event {
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    min-height: 40px;
+    resize: vertical;
+}
+
+.save-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.past {
+    background-color: #f8d7da; /* Past time block color */
+/* }
+
+.present {
+    background-color: #d4edda; /* Present time block color */
+}
+
+/* .future {
+    background-color: #cce5ff; /* Future time block color */
+}  */
