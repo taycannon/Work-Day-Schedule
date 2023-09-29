@@ -14,7 +14,8 @@ To my GitLab on this project click the link below
 Link to webpage: 
 
 ## Credits
-N/A
+Google
+bootstrap
 
 ## License
 N/A

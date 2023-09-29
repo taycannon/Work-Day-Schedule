@@ -18,9 +18,14 @@ function clearEvent(hour) {
     localStorage.removeItem(`event-${hour}`); // Remove the event from local storage
   }
 
+  $(".form-control").on("input", function () {
+    const hour = $(this).attr("id").split("-")[1];
+    saveEvent(hour);
+  });
+
   // Function to load events from localStorage
   function loadEvents() {
-    for (let hour = 9; hour <= 17; hour++) {
+    for (let hour = 1; hour <= 17; hour++) {
       const eventText = localStorage.getItem(`event-${hour}`);
       if (eventText) {
         $(`#event-${hour}`).val(eventText);
@@ -34,12 +39,34 @@ function clearEvent(hour) {
     saveEvent(hour);
   });
 
-    // Function to clear button 
-    $(".clear-button").on("click", function () {
-        const hour = $(this).data("hour");
-        clearEvent(hour);
-      });
+  // Function to clear button 
+$(".clear-button").on("click", function () {
+     const hour = $(this).data("hour");
+    clearEvent(hour);
+ });
+
+// Function to update the row classes based on the current time
+function updateRowClasses() {
+    const currentTime = dayjs();
+    $(".time-block").each(function () {
+      const hour = parseInt($(this).data("hour"));
+      if (hour < currentTime.hour()) {
+        $(this).removeClass("present", "future").addClass("past");
+      } else if (hour === currentTime.hour()) {
+        $(this).removeClass("past", "future").addClass("present");
+      } else {
+        $(this).removeClass("past", "present").addClass("future");
+      }
+    });
+  }
   
+  // Call the function to update row classes on page load
+  updateRowClasses();
+  
+  // Update row classes every minute (adjust the interval as needed)
+  setInterval(updateRowClasses); // Every minute
+  
+
   // Initial rendering of time and loading of events
   renderTime();
   loadEvents();
