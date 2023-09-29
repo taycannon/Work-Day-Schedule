@@ -34,4 +34,19 @@ body {
     font-family: cursive, sans-serif;
   }
   
+ /* CSS for past time */
+.past {
+  background-color: red; 
+}
+
+/* CSS for present time */
+.present {
+  background-color: lightblue; 
+}
+
+/* CSS for future time */
+.future {
+  background-color: lightgreen;
+}
+
   

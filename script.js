@@ -45,31 +45,33 @@ $(".clear-button").on("click", function () {
     clearEvent(hour);
  });
 
-// Function to update the row classes based on the current time
+
+// Function to update the row classes based current time
 function updateRowClasses() {
-    const currentTime = dayjs();
-    $(".time-block").each(function () {
-      const hour = parseInt($(this).data("hour"));
-      if (hour < currentTime.hour()) {
-        $(this).removeClass("present", "future").addClass("past");
-      } else if (hour === currentTime.hour()) {
-        $(this).removeClass("past", "future").addClass("present");
-      } else {
-        $(this).removeClass("past", "present").addClass("future");
-      }
-    });
-  }
-  
-  // Call the function to update row classes on page load
+  const currentTime = dayjs();
+  $(".time-block").each(function () {
+    const hour = parseInt($(this).data("hour"));
+    if (hour < currentTime.hour()) {
+      $(this).removeClass("present future").addClass("past");
+    } else if (hour === currentTime.hour()) {
+      $(this).removeClass("past future").addClass("present");
+    } else {
+      $(this).removeClass("past present").addClass("future");
+    }
+  });
+}
+
+
+updateRowClasses();
+setInterval(updateRowClasses, 60000)
+
   updateRowClasses();
-  
-  // Update row classes every minute (adjust the interval as needed)
-  setInterval(updateRowClasses); // Every minute
+  setInterval(updateRowClasses);
   
 
-  // Initial rendering of time and loading of events
+
   renderTime();
   loadEvents();
   
-  // Update time every second
+
   setInterval(renderTime, 1000);
