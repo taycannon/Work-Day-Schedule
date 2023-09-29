@@ -11,13 +11,13 @@ N/A
 This is used for when you can not keep up with all the things you need to do! This can be used by you, family, or friends to make life a little more simple.
 
 To my GitLab on this project click the link below
-Link to webpage: 
+Link to webpage: https://taycannon.github.io/Work-Day-Schedule/
 
 ## Credits
 Google
 bootstrap
 W3schools
-
+Taylor Cannon (me)
 ## License
 N/A
 
